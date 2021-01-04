@@ -53,18 +53,18 @@ docker run \
 ```
 Docker-Compose: 
 ```
- damselfly: 
-        container_name: damselfly
-        image: webreaper/damselfly
-        ports:
-            - 6363:6363/tcp
-        volumes:
-            - /volume1/dockerdata/damselfly:/config
-            - /volume1/photo:/pictures 
-        restart: unless-stopped
+  damselfly: 
+    container_name: damselfly
+    image: webreaper/damselfly
+    ports:
+      - 6363:6363/tcp
+    volumes:
+      - /volume1/dockerdata/damselfly:/config
+      - /volume1/photo:/pictures 
+    restart: unless-stopped
 ```
 
-The default port is 6363. The /pictures volume is mapped to the root directory of your photographs. By 
+The default port is 6363. The /pictures volume is mapped to the root directory of your photographs. 
 
 Note that in order to set up inotify watchers on your folders, Damselfly will increase the number of inotify instances as follows:
 
